@@ -43,7 +43,8 @@ function post($action) {
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array("Expect:  "));
-
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	
 	// Execute the request
 
 	$data = curl_exec($ch);
